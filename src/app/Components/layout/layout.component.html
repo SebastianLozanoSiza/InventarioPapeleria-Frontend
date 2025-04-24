@@ -1,1 +1,49 @@
-<p>layout works!</p>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <h1>Inventario Papeleria</h1>
+        <button mat-icon-button (click)="sidenav.toggle();">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened="true" mode="side" style="width: 200px;">
+        <mat-nav-list>
+
+            <mat-list-item routerLink="/pages/proveedores">
+                <mat-icon mat-list-icon>business</mat-icon>
+                <span class="nav-label">Proveedores</span>
+            </mat-list-item>
+
+            <mat-list-item routerLink="/pages/categorias">
+                <mat-icon mat-list-icon>category</mat-icon>
+                <span class="nav-label">Categorias</span>
+            </mat-list-item>
+
+            <mat-list-item routerLink="/pages/productos">
+                <mat-icon mat-list-icon>collections_bookmark</mat-icon>
+                <span class="nav-label">Productos</span>
+            </mat-list-item>      
+
+            <mat-list-item routerLink="/pages/entradas">
+                <mat-icon mat-list-icon>inventory_2</mat-icon>
+                <span class="nav-label">Entradas</span>
+            </mat-list-item>    
+
+            <mat-list-item routerLink="/pages/salidas">
+                <mat-icon mat-list-icon>outbox </mat-icon>
+                <span class="nav-label">Salidas</span>
+            </mat-list-item>          
+
+
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div style="height: 90vh;">
+            <router-outlet></router-outlet>
+            
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
