@@ -1,1 +1,42 @@
-<p>salida works!</p>
+<section class="container-fluid py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="fw-bold">Salida de productos</h1>
+        <button class="btn btn-primary shadow-sm" (click)="nuevaSalida()">
+            <i class="bi bi-plus-circle me-1"></i> Registrar Nueva Salida
+        </button>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover align-middle shadow rounded-3 overflow-hidden">
+            <thead class="table-primary text-center">
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio C/U</th>
+                    <th>motivo</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                <ng-container *ngFor="let salida of listaSalidas">
+                    <tr *ngFor="let detalle of salida.detalleSalida">
+                        <td>{{detalle.producto}}</td>
+                        <td>{{detalle.cantidad}}</td>
+                        <td>{{detalle.precioUnitario}}</td>
+                        <td>{{salida.motivo}}</td>
+                        <td>{{salida.fecha | date: 'dd/MM/yyyy'}}</td>
+                        <td>
+                            <button class="btn btn-outline-warning btn-sm me-1" (click)="editarSalida(salida)">
+                                <i class="bi bi-pencil-fill"></i>
+                            </button>
+                            <button class="btn btn-outline-danger btn-sm" (click)="eliminarSalida(salida)">
+                                <i class="bi bi-trash-fill"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</section>

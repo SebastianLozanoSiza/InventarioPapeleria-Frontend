@@ -12,6 +12,7 @@ import { ModalCategoriaComponent } from './Modales/modal-categoria/modal-categor
 import { ModalProductoComponent } from './Modales/modal-producto/modal-producto.component';
 import { ModalProveedorComponent } from './Modales/modal-proveedor/modal-proveedor.component';
 import { ModalEntradaComponent } from './Modales/modal-entrada/modal-entrada.component';
+import { ModalSalidaComponent } from './Modales/modal-salida/modal-salida.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ModalEntradaComponent } from './Modales/modal-entrada/modal-entrada.com
     ModalCategoriaComponent,
     ModalProductoComponent,
     ModalProveedorComponent,
-    ModalEntradaComponent
+    ModalEntradaComponent,
+    ModalSalidaComponent
   ],
   imports: [
     CommonModule,
