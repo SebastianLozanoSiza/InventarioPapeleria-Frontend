@@ -1,0 +1,49 @@
+<h2 mat-dialog-title>{{tituloAccion}} Proveedor</h2>
+
+<mat-dialog-content>
+    <form [formGroup]="formularioProveedor">
+        <mat-grid-list cols="2" rowHeight="80px" gutterSize="16px">
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput autocomplete="off" formControlName="nombre" required>
+                    <mat-icon matSuffix>person</mat-icon>
+                    <mat-error *ngIf="formularioProveedor.get('nombre')?.hasError('required')">
+                        El nombre es obligatorio.
+                    </mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Correo</mat-label>
+                    <input matInput type="email" formControlName="correo" required>
+                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-error *ngIf="formularioProveedor.get('correo')?.hasError('required')">
+                        El correo es obligatorio.
+                    </mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Teléfono</mat-label>
+                    <input matInput type="tel" formControlName="telefono" required>
+                    <mat-icon matSuffix>phone</mat-icon>
+                    <mat-error *ngIf="formularioProveedor.get('telefono')?.hasError('required')">
+                        El teléfono es obligatorio.
+                    </mat-error>
+                </mat-form-field>
+            </mat-grid-tile>
+
+        </mat-grid-list>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close color="warn">Volver</button>
+    <button mat-raised-button color="primary" [disabled]="formularioProveedor.invalid" (click)="guardarEditarProveedor()">
+        {{botonAccion}}
+    </button>
+</mat-dialog-actions>

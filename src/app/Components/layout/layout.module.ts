@@ -10,6 +10,7 @@ import { ProveedorComponent } from './Pages/proveedor/proveedor.component';
 import { SharedModule } from 'src/app/Reutilizable/shared/shared.module';
 import { ModalCategoriaComponent } from './Modales/modal-categoria/modal-categoria.component';
 import { ModalProductoComponent } from './Modales/modal-producto/modal-producto.component';
+import { ModalProveedorComponent } from './Modales/modal-proveedor/modal-proveedor.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ModalProductoComponent } from './Modales/modal-producto/modal-producto.
     SalidaComponent,
     ProveedorComponent,
     ModalCategoriaComponent,
-    ModalProductoComponent
+    ModalProductoComponent,
+    ModalProveedorComponent
   ],
   imports: [
     CommonModule,
