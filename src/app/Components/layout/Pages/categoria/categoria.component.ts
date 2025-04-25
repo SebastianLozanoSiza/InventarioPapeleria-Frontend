@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Categoria } from 'src/app/interfaces/categoria';
 import { CategoriaService } from 'src/app/services/categoria.service';
@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
   templateUrl: './categoria.component.html',
   styleUrls: ['./categoria.component.css']
 })
-export class CategoriaComponent {
+export class CategoriaComponent implements OnInit {
   listaCategoria: Categoria[] = [];
 
   constructor(private dialog: MatDialog, private categoriaService: CategoriaService, private utilidadService: UtilidadService) {
